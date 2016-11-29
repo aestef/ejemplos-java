@@ -1,5 +1,8 @@
-package escrituraArchivos;
+package Ejercicio.newpackage;
 
+// Ejemplo tomado del libro 
+
+import escrituraArchivos.*;
 // Ejemplo tomado del libro 
 
 

@@ -1,4 +1,4 @@
-package lecturaArchivos;
+package Ejercicio2.newpackage;
 
 // Ejemplo tomado del libro 
 // D EITEL , P AUL J. Y H ARVEY M. D EITEL
@@ -6,9 +6,9 @@ package lecturaArchivos;
 // fines educativos
 // Prueba de la clase ArchivoTexto.
 // Este programa lee un archivo de texto y muestra cada registro.
+import lecturaArchivos.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.IllegalStateException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -22,7 +22,7 @@ public class LeerArchivoTexto {
     // permite al usuario abrir el archivo
     public void abrirArchivo() {
         try {
-            entrada = new Scanner(new File("datos.txt"));
+            entrada = new Scanner(new File("calificaciones.txt"));
         } // fin de try
         catch (FileNotFoundException fileNotFoundException) {
             System.err.println("Error al abrir el archivo.");
@@ -36,26 +36,36 @@ public class LeerArchivoTexto {
         try // lee registros del archivo, usando el objeto Scanner
         {
             double suma = 0;
-            double suma1 = 0;
-            double suma2 = 0;
-            double suma3 = 0;
+            double promedio = 0;
+            String nombre = " ";
+            
+            double media[] = new double[4];
+            int cont = 0;
+            double mayor = 0;
+            System.out.println("\n-----INFORMACION DE CALIFICACIONES-----\n");
             while (entrada.hasNext()) {
                 String linea = entrada.nextLine();
-                System.out.println(linea);
+                //System.out.println(linea);
                 ArrayList<String> linea_partes = new ArrayList<String>(Arrays.asList(linea.split(";")));
-                System.out.println(linea_partes);
+                //System.out.println(linea_partes);
                 
-                for (int i = 0; i < linea_partes.size(); i++) {
-                    String elemento = linea_partes.get(i);
-                    suma = suma + Double.parseDouble(linea_partes.get(i));
+                for (int i = 2; i < (linea_partes.size() - 1); i++) {
+                    cont = 0;
+                    media[cont] = 0;
+                    nombre = linea_partes.get(0);
+                    media[cont] = (media[cont] + Double.parseDouble(linea_partes.get(i)) + Double.parseDouble(linea_partes.get(i + 1))) / 2;
+                    suma = media[cont] + suma;
+                    System.out.printf("%s tiene de promedio: %.2f\n", nombre, media[cont]);
+                    if (media[cont] > mayor) {
+                        mayor = media[cont];
+                    }
+                    cont = cont + 1;
                 }
-                suma1 = suma1 + Double.parseDouble(linea_partes.get(0));
-                suma2 = suma2 + Double.parseDouble(linea_partes.get(1));
-                suma3 = suma3 + Double.parseDouble(linea_partes.get(2));
 
             } // fin de while
-            System.out.printf("SUMA TOTAL %.2f: \n SUMA FILA 1: %.2f\n SUMA FILA 2: %.2f\n SUMA FILA 1: %.2f\n", suma, suma1, suma2, suma3);
-
+            promedio = suma / 4;
+            System.out.printf("________________________________\nEl promedio general es: %.2f\n", promedio);
+            System.out.printf("El promedio mayor es: %.2f\n________________________________\n", mayor);
         } // fin de try
         catch (NoSuchElementException elementException) {
             System.err.println("El archivo no esta bien formado.");

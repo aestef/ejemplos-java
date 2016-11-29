@@ -1,10 +1,11 @@
-package escrituraArchivos;
+package Ejercicio.newpackage;
 
 // Ejemplo tomado del libro 
 // D EITEL , P AUL J. Y H ARVEY M. D EITEL
 // CÓMO PROGRAMAR EN J AVA . Séptima edición
 // fines educativos
 // Uso de la clase Formatter para escribir datos en un archivo de texto.
+import escrituraArchivos.*;
 import java.io.FileNotFoundException;
 import java.lang.SecurityException;
 import java.util.Formatter;
@@ -19,7 +20,7 @@ public class ArchivoTexto {
     // permite al usuario abrir el archivo
     public void abrir_archivo() {
         try {
-            salida = new Formatter("ejemplo-archivo.txt");
+            salida = new Formatter("ejemplo-archivo1.txt");
         } // fin de try
         catch (SecurityException securityException) {
             System.err.println(
@@ -45,15 +46,17 @@ public class ArchivoTexto {
             try // envía valores al archivo
             {
                 // obtiene los datos que se van a enviar
-                System.out.println("Ingrese la edad de la persona (debe ser entero)");
-                int edad = entrada.nextInt(); // lee la edad 
+                System.out.println("Ingrese calificacion 1 de la persona ");
+                double calificacion1 = entrada.nextDouble(); // lee la calificacion1
+                System.out.println("Ingrese calificacion 2 de la persona ");
+                double calificacion2 = entrada.nextDouble(); // lee la calificacion2 
                 System.out.println("Ingrese el nombre de la persona");
                 String nombre = entrada.next(); // lee el nombre
                 System.out.println("Ingrese el apellidos de la persona");
                 String apellido = entrada.next(); // lee el apellido
 
                 // escribe el nuevo registro (escribe en el archivo
-                salida.format("%d|%s|%s\n", edad, nombre, apellido);
+                salida.format("%s|%s|%.2f |%.2f|\n", nombre, apellido,calificacion1, calificacion2);
 
                 System.out.println("Desea ingresar más datos si (1), no(2)");
                 int valor = entrada.nextInt();

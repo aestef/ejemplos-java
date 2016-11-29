@@ -1,0 +1,4 @@
+Luis;Alvarez;10;15
+Andre;Mena;5;18
+Xavier;Castro;20;20
+Pablo;Mora;13;1
