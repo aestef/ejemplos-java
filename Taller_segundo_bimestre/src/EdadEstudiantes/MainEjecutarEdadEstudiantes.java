@@ -1,7 +1,7 @@
 package EdadEstudiantes;
 
 /**
- * @author SALAS
+ * @author ANDREA MENA y JHEYSON GAONA 
  */
 public class MainEjecutarEdadEstudiantes {
 

@@ -1,7 +1,7 @@
 package Estudiantes;
 
 /**
- * @author SALAS
+ * @author ANDREA MENA y JHEYSON GAONA 
  */
 public class MainEjecutarEstudiantes {
 
