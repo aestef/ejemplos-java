@@ -1,0 +1,14 @@
+			Comercial Ventas y Reventas
+----------------------------------------
+
+Nombre: ANDREA MENA
+Ciudad: LOJA
+----------------------------------------
+Producto		Cant		Precio
+Arroz			10		25,00
+Azucar			10		15,00
+Sal			10		10,00
+----------------------------------------
+			Subtotal: 50,00
+			IVA: 7,00
+			TOTAL: 57,00
