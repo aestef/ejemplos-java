@@ -51,7 +51,7 @@ public class CrearFactura {
             System.out.println("Ingrese la ciudad");
             String ciudad = entrada.next();
 
-            salida.format("\t\tComercial Ventas y Reventas\n"
+            salida.format("\tComercial Ventas y Reventas\n"
                     + "----------------------------------------\n"
                     + "\nNombre: %s\nCiudad: %s\n"
                     + "----------------------------------------\n"
@@ -93,7 +93,7 @@ public class CrearFactura {
                         precio = 1.0 * cant;
                         break;
                 }
-                salida.format("%s\t\t%d\t\t%.2f\n", producto, cant, precio);
+                salida.format("%s\t\t %d\t\t %.2f\n", producto, cant, precio);
 
                 subtotal = subtotal + precio;
 
@@ -108,9 +108,9 @@ public class CrearFactura {
             total = iva + subtotal;
 
             salida.format("----------------------------------------\n"
-                    + "\t\t\tSubtotal:\t%.2f\n"
-                    + "\t\t\tIVA:\t%.2f\n"
-                    + "\t\t\tTOTAL:\t%.2f\n", subtotal, iva, total);
+                    + "\t\t\tSubtotal: \t%.2f\n"
+                    + "\t\t\tIVA:  \t%.2f\n" 
+                    + "\t\t\tTOTAL:  \t%.2f\n", subtotal, iva, total);
 
         } // fin de try // fin de try // fin de try // fin de try // fin de try // fin de try // fin de try // fin de try
         catch (FormatterClosedException formatterClosedException) {
